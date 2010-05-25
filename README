@@ -1,0 +1,5 @@
+This category allows you to resize an UIImage at a constraint size, or proportionally so that it fits in a given CGSize.
+
+This category defines the following methods :
+	-(UIImage*)resizedImageWithSize:(CGSize*)size;
+	-(UIImage*)resizedImageToFitInSize:(CGSize*)size resizeIfSmaller:(BOOL)resizeIfSmaller;
