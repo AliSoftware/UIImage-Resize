@@ -18,7 +18,7 @@
 	CGFloat scaleRatio = dstSize.width / srcSize.width;
 	UIImageOrientation orient = self.imageOrientation;
 	CGAffineTransform transform = CGAffineTransformIdentity;
-    switch(orient) {
+	switch(orient) {
 			
 		case UIImageOrientationUp: //EXIF = 1
 			transform = CGAffineTransformIdentity;
