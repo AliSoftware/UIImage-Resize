@@ -3,3 +3,6 @@ This category allows you to resize an UIImage at a constraint size, or proportio
 This category defines the following methods :
 	-(UIImage*)resizedImageWithSize:(CGSize*)size;
 	-(UIImage*)resizedImageToFitInSize:(CGSize*)size resizeIfSmaller:(BOOL)resizeIfSmaller;
+
+This methods takes correctly the imageOrientation / EXIF orientation into account.
+

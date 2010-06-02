@@ -1,7 +1,7 @@
 //
 //  UIImage+Resize.h
 //
-//  Created by Olivier on 02/07/09.
+//  Created by Olivier Halligon on 12/08/09.
 //  Copyright 2009 AliSoftware. All rights reserved.
 //
 
