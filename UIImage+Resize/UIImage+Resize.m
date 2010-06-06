@@ -117,7 +117,7 @@
 	}
 
 	// Compute the target CGRect in order to keep aspect-ratio
-	CGSize dstSize = srcSize;
+	CGSize dstSize;
 	
 	if ( !scale && (srcSize.width < boundingSize.width) && (srcSize.height < boundingSize.height) ) {
 		//NSLog(@"Image is smaller, and we asked not to scale it in this case (scaleIfSmaller:NO)");
