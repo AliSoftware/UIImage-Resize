@@ -116,6 +116,7 @@
 			break;
         default:
             // NOP
+            break;
 	}
 
 	// Compute the target CGRect in order to keep aspect-ratio
