@@ -114,6 +114,8 @@
 		case UIImageOrientationRightMirrored:
 			boundingSize = CGSizeMake(boundingSize.height, boundingSize.width);
 			break;
+        default:
+            // NOP
 	}
 
 	// Compute the target CGRect in order to keep aspect-ratio
