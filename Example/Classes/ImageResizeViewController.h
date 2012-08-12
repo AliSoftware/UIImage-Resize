@@ -10,15 +10,13 @@
 
 
 @interface ImageResizeViewController : UIViewController
-	<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-{
-	IBOutlet UIImageView* originalImageView;
-	IBOutlet UIImageView* scaledImageViewH;
-	IBOutlet UIImageView* scaledImageViewV;
-	
-	UIImage* srcImage;
-}
-@property(nonatomic, retain) UIImage* srcImage;
+    <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property (nonatomic, retain) IBOutlet UIImageView* originalImageView;
+@property (nonatomic, retain) IBOutlet UIImageView* scaledImageViewH;
+@property (nonatomic, retain) IBOutlet UIImageView* scaledImageViewV;
+@property (nonatomic, retain) UIImage* srcImage;
+
 -(IBAction)pickFromLibrary;
 -(IBAction)pickFromCamera;
 @end

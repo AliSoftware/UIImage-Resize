@@ -10,7 +10,14 @@
 #import "UIImage+Resize.h"
 
 @implementation ImageResizeViewController
-@synthesize srcImage;
+@synthesize originalImageView = _originalImageView;
+@synthesize scaledImageViewH = _scaledImageViewH;
+@synthesize scaledImageViewV = _scaledImageViewV;
+@synthesize srcImage = _srcImage;
+
+//////////////////////////////////////////////////////////////////
+#pragma mark - IBActions
+
 
 -(IBAction)pickFromLibrary
 {
@@ -30,6 +37,8 @@
 	[ipc release];	
 }
 	 
+//////////////////////////////////////////////////////////////////
+#pragma mark - ImagePicker Delegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
@@ -37,21 +46,43 @@
 	[picker dismissModalViewControllerAnimated:YES];
 }
 
+//////////////////////////////////////////////////////////////////
+#pragma mark - Refreshing UI
+
 -(void)viewDidAppear:(BOOL)animated
 {
 	NSLog(@"Updating interface");
 	if (!self.srcImage) return;
 	
 	NSLog(@"Original image (%@): %@",self.srcImage,NSStringFromCGSize(self.srcImage.size));
-	originalImageView.image = self.srcImage;
+	self.originalImageView.image = self.srcImage;
 	
-	UIImage* scaledImgH = [self.srcImage resizedImageToFitInSize:scaledImageViewH.bounds.size scaleIfSmaller:NO];
+	UIImage* scaledImgH = [self.srcImage resizedImageToFitInSize:self.scaledImageViewH.bounds.size scaleIfSmaller:NO];
 	NSLog(@"Scaled image H (%@): %@",scaledImgH,NSStringFromCGSize(scaledImgH.size));
-	scaledImageViewH.image = scaledImgH;
+	self.scaledImageViewH.image = scaledImgH;
 
-	UIImage* scaledImgV = [self.srcImage resizedImageToFitInSize:scaledImageViewV.bounds.size scaleIfSmaller:NO];
+	UIImage* scaledImgV = [self.srcImage resizedImageToFitInSize:self.scaledImageViewV.bounds.size scaleIfSmaller:NO];
 	NSLog(@"Scaled image V (%@): %@",scaledImgV,NSStringFromCGSize(scaledImgV.size));
-	scaledImageViewV.image = scaledImgV;
+	self.scaledImageViewV.image = scaledImgV;
 }
 
+//////////////////////////////////////////////////////////////////
+#pragma mark - Memory Managment
+
+-(void)viewDidUnload
+{
+    self.originalImageView = nil;
+    self.scaledImageViewH = nil;
+    self.scaledImageViewV = nil;
+    [super viewDidUnload];
+}
+
+-(void)dealloc
+{
+    [_originalImageView release];
+    [_scaledImageViewH release];
+    [_scaledImageViewV release];
+    [_srcImage release];
+    [super dealloc];
+}
 @end

@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		094AADDC11AF2528008591FE /* ImageResizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 094AADDA11AF2528008591FE /* ImageResizeViewController.m */; };
-		094AADDD11AF2528008591FE /* ImageResizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 094AADDB11AF2528008591FE /* ImageResizeViewController.xib */; };
 		094AB1AB11B5E52D008591FE /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 094AB1A911B5E52D008591FE /* UIImage+Resize.m */; };
-		1D3623260D0F684500981E51 /* UIImageResizeTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* UIImageResizeTestAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -21,12 +19,9 @@
 /* Begin PBXFileReference section */
 		094AADD911AF2528008591FE /* ImageResizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageResizeViewController.h; sourceTree = "<group>"; };
 		094AADDA11AF2528008591FE /* ImageResizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResizeViewController.m; sourceTree = "<group>"; };
-		094AADDB11AF2528008591FE /* ImageResizeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageResizeViewController.xib; sourceTree = "<group>"; };
 		094AB1A811B5E52D008591FE /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		094AB1A911B5E52D008591FE /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* UIImageResizeTestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageResizeTestAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* UIImageResizeTestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageResizeTestAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* UIImageResizeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIImageResizeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,8 +48,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1D3623240D0F684500981E51 /* UIImageResizeTestAppDelegate.h */,
-				1D3623250D0F684500981E51 /* UIImageResizeTestAppDelegate.m */,
 				094AADD911AF2528008591FE /* ImageResizeViewController.h */,
 				094AADDA11AF2528008591FE /* ImageResizeViewController.m */,
 			);
@@ -105,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
-				094AADDB11AF2528008591FE /* ImageResizeViewController.xib */,
 				8D1107310486CEB800E47090 /* UIImageResizeTest-Info.plist */,
 			);
 			name = Resources;
@@ -171,7 +163,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
-				094AADDD11AF2528008591FE /* ImageResizeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +174,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				1D3623260D0F684500981E51 /* UIImageResizeTestAppDelegate.m in Sources */,
 				094AADDC11AF2528008591FE /* ImageResizeViewController.m in Sources */,
 				094AB1AB11B5E52D008591FE /* UIImage+Resize.m in Sources */,
 			);

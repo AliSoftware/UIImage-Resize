@@ -1,14 +1,15 @@
-# xcode noise
-build/
-*~.nib/
+# Xcode
+build/*
 *.pbxuser
-*.perspective
-*.perspectivev3
+!default.pbxuser
 *.mode1v3
+!default.mode1v3
 *.mode2v3
-
-# old school
-.svn
-
-# osx noise
-.DS_Store
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcworkspace
+!default.xcworkspace
+xcuserdata
+profile
+*.moved-aside
