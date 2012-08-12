@@ -71,7 +71,7 @@
 	
 	/////////////////////////////////////////////////////////////////////////////
 	// The actual resize: draw the image on a new context, applying a transform matrix
-	UIGraphicsBeginImageContext(dstSize);
+	UIGraphicsBeginImageContextWithOptions(dstSize, NO, 0.0);
 	
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
@@ -131,10 +131,10 @@
 		
 		if (wRatio < hRatio) {
 			//NSLog(@"Width imposed, Height scaled ; ratio = %f",wRatio);
-			dstSize = CGSizeMake(boundingSize.width, srcSize.height * wRatio);
+			dstSize = CGSizeMake(boundingSize.width, floorf(srcSize.height * wRatio));
 		} else {
 			//NSLog(@"Height imposed, Width scaled ; ratio = %f",hRatio);
-			dstSize = CGSizeMake(srcSize.width * hRatio, boundingSize.height);
+			dstSize = CGSizeMake(floorf(srcSize.width * hRatio), boundingSize.height);
 		}
 	}
 		
