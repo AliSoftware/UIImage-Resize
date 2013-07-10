@@ -76,7 +76,7 @@
 	
 	/////////////////////////////////////////////////////////////////////////////
 	// The actual resize: draw the image on a new context, applying a transform matrix
-	UIGraphicsBeginImageContextWithOptions(dstSize, NO, 0.0);
+	UIGraphicsBeginImageContextWithOptions(dstSize, NO, self.scale);
 	
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
