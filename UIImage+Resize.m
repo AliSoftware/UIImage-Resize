@@ -15,6 +15,11 @@
 	// the below values are regardless of orientation : for UIImages from Camera, width>height (landscape)
 	CGSize  srcSize = CGSizeMake(CGImageGetWidth(imgRef), CGImageGetHeight(imgRef)); // not equivalent to self.size (which is dependant on the imageOrientation)!
 	
+    /* Don't resize if we already meet the required destination size. */
+    if (CGSizeEqualToSize(srcSize, dstSize)) {
+        return self;
+    }
+    
 	CGFloat scaleRatio = dstSize.width / srcSize.width;
 	UIImageOrientation orient = self.imageOrientation;
 	CGAffineTransform transform = CGAffineTransformIdentity;
@@ -71,7 +76,7 @@
 	
 	/////////////////////////////////////////////////////////////////////////////
 	// The actual resize: draw the image on a new context, applying a transform matrix
-	UIGraphicsBeginImageContextWithOptions(dstSize, NO, 0.0);
+	UIGraphicsBeginImageContextWithOptions(dstSize, NO, self.scale);
 	
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
@@ -104,7 +109,7 @@
 	// get the image size (independant of imageOrientation)
 	CGImageRef imgRef = self.CGImage;
 	CGSize srcSize = CGSizeMake(CGImageGetWidth(imgRef), CGImageGetHeight(imgRef)); // not equivalent to self.size (which depends on the imageOrientation)!
-	
+
 	// adjust boundingSize to make it independant on imageOrientation too for farther computations
 	UIImageOrientation orient = self.imageOrientation;  
 	switch (orient) {

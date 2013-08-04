@@ -54,15 +54,15 @@
 	NSLog(@"Updating interface");
 	if (!self.srcImage) return;
 	
-	NSLog(@"Original image (%@): %@",self.srcImage,NSStringFromCGSize(self.srcImage.size));
+	NSLog(@"Original image (%@), width: %.0f, height: %.0f, scale: %0.2f",self.srcImage,self.srcImage.size.width, self.srcImage.size.height, self.srcImage.scale);
 	self.originalImageView.image = self.srcImage;
 	
 	UIImage* scaledImgH = [self.srcImage resizedImageToFitInSize:self.scaledImageViewH.bounds.size scaleIfSmaller:NO];
-	NSLog(@"Scaled image H (%@): %@",scaledImgH,NSStringFromCGSize(scaledImgH.size));
+	NSLog(@"Scaled image horizontal (%@), width: %.0f, height: %.0f, scale: %0.2f",scaledImgH,scaledImgH.size.width, scaledImgH.size.height, scaledImgH.scale);
 	self.scaledImageViewH.image = scaledImgH;
 
 	UIImage* scaledImgV = [self.srcImage resizedImageToFitInSize:self.scaledImageViewV.bounds.size scaleIfSmaller:NO];
-	NSLog(@"Scaled image V (%@): %@",scaledImgV,NSStringFromCGSize(scaledImgV.size));
+	NSLog(@"Scaled image horizontal (%@), width: %.0f, height: %.0f, scale: %0.2f",scaledImgV,scaledImgV.size.width, scaledImgV.size.height, scaledImgV.scale);
 	self.scaledImageViewV.image = scaledImgV;
 }
 
