@@ -79,6 +79,10 @@
 	UIGraphicsBeginImageContextWithOptions(dstSize, NO, self.scale);
 	
 	CGContextRef context = UIGraphicsGetCurrentContext();
+    
+       if (!context) {
+           return nil;
+       }
 	
 	if (orient == UIImageOrientationRight || orient == UIImageOrientationLeft) {
 		CGContextScaleCTM(context, -scaleRatio, scaleRatio);
