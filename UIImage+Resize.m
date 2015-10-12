@@ -94,6 +94,13 @@
 	
 	CGContextConcatCTM(context, transform);
 	
+	CGFloat inverseRatio = srcSize.width / dstSize.width;
+    	CGFloat marginWidth = (((srcSize.width * scaleRatio) - dstSize.width) * inverseRatio) / 2;
+	CGFloat marginHeight = (((srcSize.height * scaleRatio) - dstSize.height) * inverseRatio) / 2;
+    
+	CGContextDrawImage(UIGraphicsGetCurrentContext(), CGRectMake(marginWidth, marginHeight, srcSize.width, srcSize.height), imgRef);
+
+	
 	// we use srcSize (and not dstSize) as the size to specify is in user space (and we use the CTM to apply a scaleRatio)
 	CGContextDrawImage(UIGraphicsGetCurrentContext(), CGRectMake(0, 0, srcSize.width, srcSize.height), imgRef);
 	UIImage* resizedImage = UIGraphicsGetImageFromCurrentImageContext();
